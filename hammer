@@ -1,0 +1,22 @@
+local LocalPlayer = game:GetService("Players").LocalPlayer
+for _, hat in pairs(LocalPlayer.Character.Humanoid:GetAccessories()) do
+    if hat.Handle ~= nil then
+        if hat.Name == "MARTILLO" then
+            local tool = Instance.new("Tool", LocalPlayer.Backpack)
+            tool.Name = "Hammer"
+            local hathandle = hat.Handle
+            hathandle:FindFirstChildOfClass("Weld"):Destroy()
+            hathandle.Parent = tool
+            hathandle.Massless = true
+        end
+    end
+end
+game.Players.LocalPlayer.Backpack.Knife.Idle.AnimationId     = "rbxassetid://503259904"
+game.Players.LocalPlayer.Backpack.Knife.Punch1.AnimationId   = "rbxassetid://186934753"
+game.Players.LocalPlayer.Backpack.Knife.Punch2.AnimationId   = "rbxassetid://186934753"
+game.Players.LocalPlayer.Backpack.Knife.Running.AnimationId  = "rbxassetid://431972483"
+game.Players.LocalPlayer.Backpack.Knife.GripUp = Vector3.new(0,6,-1)
+game.Players.LocalPlayer.Backpack.Knife.GripPos =  Vector3.new(-0.98,0,0)
+game.Players.LocalPlayer.Backpack.Hammer.Grip = CFrame.new(0, -2.3, 0) * CFrame.Angles(0, math.rad(90), math.rad(0))
+game.Players.LocalPlayer.Backpack.Hammer.Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Backpack.Knife.Parent = game.Players.LocalPlayer.Character
